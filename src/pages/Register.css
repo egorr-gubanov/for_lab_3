@@ -1,0 +1,29 @@
+/* Register/Login */
+.registerlogin {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f51111;
+    width: 100vh;
+    z-index: 1000;
+}
+
+/* Основной контейнер */
+.app-container {
+    display: flex;
+    min-height: 100vh; /* Занимаем всю высоту экрана */
+}
+
+/* Контент растягивается на всю оставшуюся ширину */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 250px; /* С учётом ширины sidebar */
+    background-color: #f7f7f7;
+}
+
+/* Для маленьких экранов убираем отступ слева */
+@media (max-width: 1024px) {
+    .content {
+        margin-left: 0;
+    }
+}
