@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SettingsPage.css';
 import { useUser } from './UserContext'; // Импортируем контекст пользователя
 import { EthrDID } from 'ethr-did'; // Импортируем библиотеку для работы с DID
-import { Issuer } from 'did-jwt-vc'; // Импортируем библиотеку для создания VC
+// import { Issuer } from 'did-jwt-vc'; // Импортируем библиотеку для создания VC
 import Web3 from 'web3'; // Импортируем Web3
 
 const SettingsPage = () => {
@@ -48,7 +48,7 @@ const SettingsPage = () => {
 
     const connectDID = async () => {
         const provider = new Web3.providers.HttpProvider(`https://mainnet.infura.io/v3/${infuraProjectId}`);
-        const web3 = new Web3(provider);
+        // const web3 = new Web3(provider);
         const newDid = new EthrDID({ privateKey, provider });
         setDid(newDid.did); // Сохраняем DID в состоянии
 
@@ -61,22 +61,22 @@ const SettingsPage = () => {
             return;
         }
 
-        const vcPayload = {
-            sub: did,
-            nbf: Math.floor(Date.now() / 1000),
-            vc: {
-                '@context': ['https://www.w3.org/2018/credentials/v1'],
-                type: ['VerifiableCredential'],
-                credentialSubject: {
-                    id: did,
-                    achievement: {
-                        type: 'Certificate',
-                        name: 'Certified Blockchain Developer',
-                        date: '2024-10-15'
-                    }
-                }
-            }
-        };
+        // const vcPayload = {
+        //     sub: did,
+        //     nbf: Math.floor(Date.now() / 1000),
+        //     vc: {
+        //         '@context': ['https://www.w3.org/2018/credentials/v1'],
+        //         type: ['VerifiableCredential'],
+        //         credentialSubject: {
+        //             id: did,
+        //             achievement: {
+        //                 type: 'Certificate',
+        //                 name: 'Certified Blockchain Developer',
+        //                 date: '2024-10-15'
+        //             }
+        //         }
+        //     }
+        // };
 
         try {
             // const vcJwt = await Issuer.createVerifiableCredentialJwt(vcPayload, new EthrDID({ privateKey, provider }));

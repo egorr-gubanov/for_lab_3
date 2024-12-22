@@ -27,7 +27,7 @@ const Login = ({ setIsAuthenticated }) => {
     const connectMetaMask = async () => {
         if (window.ethereum) {
             try {
-                const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                // const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
                 setIsAuthenticated(true); // Устанавливаем аутентификацию
                 localStorage.setItem('isAuthenticated', true); // Сохраняем состояние в localStorage
                 navigate('/'); // Переход на главную страницу после MetaMask авторизации
