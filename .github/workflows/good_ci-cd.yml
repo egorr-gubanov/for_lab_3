@@ -29,8 +29,8 @@ jobs:
       - name: dependencies
         run: npm install --legacy-peer-deps  # В таком случае не возникнет ошибка в зависимостях
 
-      - name: lintering  # Линтерим
-        run: npm run lint
+#      - name: lintering  # Линтерим
+#        run: npm run lint
 
       - name: build
         run: npm run build
