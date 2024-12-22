@@ -18,6 +18,7 @@ const AppContent = ({ isAuthenticated }) => {
     // Show content only for authenticated users
     return (
         <div className="app-container">
+            <p>test</p>
             {!hideSidebarRoutes.includes(location.pathname) && isAuthenticated && <Sidebar />}
             {isAuthenticated && (
                 <div className="content">
